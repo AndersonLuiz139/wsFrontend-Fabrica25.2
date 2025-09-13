@@ -4,26 +4,39 @@
   padding: 16px;
 }
 
-.card{
-  width: 270px;
+.list {
+  width: 100%;
+  max-width: 600px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  margin-bottom: 8px;
   background-color: var(--grey);
-  border: 3px solid var(--red);
-  border-radius: 12px;
-  flex-direction: column;
-  margin: 20px;
-  box-shadow: 0 4px 8px var(--grey-dark);
-  padding: 15px;
+  border: 2px solid var(--red);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--grey-dark);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.listItem:hover {
+  background-color: var(--hover);
+  transform: scale(1.02);
 }
 
 .image {
-  width: 220px;
-  height: 220px;
+  width: 100px;
+  height: 100px;
+  margin-right: 18px;
   object-fit: contain;
 }
 
+
 .name {
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 8px;
-  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
 }

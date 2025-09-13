@@ -14,7 +14,7 @@ type Props = {
   search: string;
 };
 
-export default function PokeList({ search }: Props) {
+export default function PokeCard({ search }: Props) {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
   useEffect(() => {
@@ -36,9 +36,9 @@ export default function PokeList({ search }: Props) {
 
   return (
     <div className={styles.container}>
-      <ul className={styles.list}>
+      <ul className={styles.grid}>
         {filtered.map((p) => (
-          <li key={p.id} className={styles.listItem}>
+          <li key={p.id} className={styles.card}>
             <img src={p.image} alt={p.name} className={styles.image} />
             <p className={styles.name}>
               #{p.id} {p.name}
