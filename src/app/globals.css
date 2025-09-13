@@ -1,0 +1,22 @@
+:root{
+  --primary: #dee2e6;
+
+  --red: #ba181b;
+  --grey: #d3d3d3;
+  --grey-dark: #161a1d;
+  
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+body{
+  background-color: #dee2e6;
+}
