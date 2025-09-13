@@ -5,6 +5,12 @@
   padding: 16px;
 }
 
+.grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
 .card {
   width: 250px;
   background-color: var(--grey);
@@ -36,4 +42,22 @@
   margin: 8px;
   text-align: center;
   text-transform: capitalize;
+}
+
+@media (min-width: 700px) {
+  .grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (min-width: 950px) {
+  .grid{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid{
+    grid-template-columns: repeat(4,1fr);
+  }
 }
