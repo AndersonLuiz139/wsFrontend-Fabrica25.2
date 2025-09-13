@@ -1,26 +1,16 @@
 "use client";
 
 import Header from "./components/Header"
-import { useEffect, useState } from "react";
-import { api } from "../services/api";
+import Footer from "./components/Footer"
+import PokeList from "./components/PokeList"
 
-type Pokemon = {
-  name: string;
-  url: string;
-};
-
-export default function Home() {
-  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-
-  useEffect(() => {
-    api.get("/pokemon?limit=10")
-      .then(res => setPokemons(res.data.results))
-      .catch(err => console.log("Erro na API", err));
-  }, []);
-
+export default function page() {
+  
   return (
     <>
       <Header/>
+      <PokeList />
+      <Footer />
     </>
       
       

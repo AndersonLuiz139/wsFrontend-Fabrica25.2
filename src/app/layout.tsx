@@ -3,7 +3,7 @@ import './globals.css';
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Pokedex',
+  title: 'Pokédex',
   description: 'Minha Pokedex Next.js',
 };
 
