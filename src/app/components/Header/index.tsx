@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./style.module.css";
 
@@ -16,7 +17,7 @@ export default function Header({ search, setSearch, setViewMode }: HeaderProps) 
         width={180}
         height={70}
         priority
-        className={styles.logo}  // 👈 adiciona a classe da logo
+        className={styles.logo}
       />
 
       <input
@@ -24,22 +25,19 @@ export default function Header({ search, setSearch, setViewMode }: HeaderProps) 
         placeholder="Buscar Pokémon"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className={styles.search} // 👈 input estilizado
+        className={styles.search}
       />
 
       <div className={styles.buttonGroup}>
-        <button 
-          onClick={() => setViewMode("list")} 
-          className={styles.button}
-        >
+        <button onClick={() => setViewMode("list")} className={styles.button}>
           Lista
         </button>
-        <button 
-          onClick={() => setViewMode("card")} 
-          className={styles.button}
-        >
+        <button onClick={() => setViewMode("card")} className={styles.button}>
           Card
         </button>
+        <Link href="/favoritos">
+          <button className={styles.button}>⭐ Favoritos</button>
+        </Link>
       </div>
     </header>
   );

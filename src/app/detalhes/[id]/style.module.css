@@ -29,9 +29,47 @@
   font-size: 18px;
 }
 
+/* Novo container só para os botões */
+.buttonsContainer {
+  display: flex;
+  flex-direction: column; /* deixa um embaixo do outro */
+  gap: 10px; /* espaço entre eles */
+  margin-top: 20px;
+  align-items: center; /* centraliza */
+}
+
+.favoriteBtn {
+  padding: 10px 20px;
+  background-color: var(--red);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 200px; /* mesmo tamanho dos dois */
+}
+
+.favoriteBtn:hover {
+  background-color: #a81f22;
+}
+
+.backBtn {
+  padding: 10px 20px;
+  background-color: #ddd;
+  color: #333;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 200px; 
+}
+
+.backBtn:hover {
+  background-color: #bbb;
+}
+
 @media (min-width: 1200px) {
   .container{
     flex-direction: row;
   }
-  
 }
