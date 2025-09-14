@@ -5,6 +5,9 @@ import { FavoritesProvider } from './hooks/FavoriteContext';
 export const metadata = {
   title: 'Pokédex',
   description: 'Minha Pokedex Next.js',
+   icons: {
+    icon: "/image/favicon.png",
+  }
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
