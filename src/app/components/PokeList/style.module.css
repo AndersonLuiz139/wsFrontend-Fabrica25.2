@@ -41,6 +41,15 @@
   text-transform: capitalize;
 }
 
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; 
+  color: inherit;     
+  width: 100%;            
+}
+
+
 @media (min-width: 950px) {
   .list {
     grid-template-columns: repeat(2, 1fr);
@@ -50,7 +59,7 @@
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1440px) {
   .list {
     grid-template-columns: repeat(3, 1fr);
   }

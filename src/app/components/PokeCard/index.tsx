@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link"; // 👈 importa o Link
 import styles from "./style.module.css";
 
 type Pokemon = {
@@ -39,10 +40,12 @@ export default function PokeCard({ search }: Props) {
       <ul className={styles.grid}>
         {filtered.map((p) => (
           <li key={p.id} className={styles.card}>
-            <img src={p.image} alt={p.name} className={styles.image} />
-            <p className={styles.name}>
-              #{p.id} {p.name}
-            </p>
+            <Link href={`/detalhes/${p.id}`}>
+              <img src={p.image} alt={p.name} className={styles.image} />
+              <p className={styles.name}>
+                #{p.id} {p.name}
+              </p>
+            </Link>
           </li>
         ))}
       </ul>
