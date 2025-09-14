@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 import { useFavorites } from "../../hooks/FavoriteContext";
 import styles from "./style.module.css";
 
@@ -17,16 +18,14 @@ type Props = {
 
 export default function PokeCard({ search }: Props) {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
 
   useEffect(() => {
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=151").then((res) => {
       const formatted = res.data.results.map((p: any, index: number) => ({
         id: index + 1,
         name: p.name,
-        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-          index + 1
-        }.png`,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`,
       }));
       setPokemons(formatted);
     });
@@ -46,9 +45,16 @@ export default function PokeCard({ search }: Props) {
       <ul className={styles.grid}>
         {filtered.map((p) => (
           <li key={p.id} className={styles.card}>
-            <img src={p.image} alt={p.name} className={styles.image} />
-            <p className={styles.name}>#{p.id} {p.name}</p>
-            <button className={styles.favoriteBtn} onClick={() => handleFavorite(p)}>
+            {/* link para a página de detalhes */}
+            <Link href={`/detalhes/${p.id}`} className={styles.link}>
+              <img src={p.image} alt={p.name} className={styles.image} />
+              <p className={styles.name}>#{p.id} {p.name}</p>
+            </Link>
+
+            <button
+              className={styles.favoriteBtn}
+              onClick={() => handleFavorite(p)}
+            >
               {isFavorite(p.id) ? "★ Remover" : "☆ Favoritar"}
             </button>
           </li>

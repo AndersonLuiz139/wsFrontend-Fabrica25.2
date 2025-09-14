@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import axios from "axios";
 import styles from "./style.module.css";
-import { useFavorites } from "../../hooks/userFavorites";
+import { useFavorites } from "../../hooks/FavoriteContext"; // <== ALTERADO
 
 type PokemonDetail = {
   id: number;
