@@ -35,9 +35,7 @@ export default function Header({ search, setSearch, setViewMode }: HeaderProps) 
         <button onClick={() => setViewMode("card")} className={styles.button}>
           Card
         </button>
-        <Link href="/favoritos">
-          <button className={styles.button}>⭐ Favoritos</button>
-        </Link>
+        <Link href="/favoritos" className={styles.button}>⭐ Favoritos</Link>
       </div>
     </header>
   );
